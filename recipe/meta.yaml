@@ -14,7 +14,7 @@ source:
   git_depth: 1
 
 build:
-  number: 0
+  number: 1
   script: "cd Code && {{ PYTHON }} setup.py install"
   skip: True  # [win]
 
@@ -42,6 +42,8 @@ requirements:
     - hdf5
     - {{ pin_compatible('numpy') }}
     - h5py
+    - scipy
+    - matplotlib
 
 test:
   imports:
