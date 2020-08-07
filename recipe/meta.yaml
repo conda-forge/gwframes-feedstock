@@ -14,7 +14,7 @@ source:
   git_depth: 1
 
 build:
-  number: 2
+  number: 3
   script: "cd Code && {{ PYTHON }} setup.py install"
   skip: True  # [win]
 
