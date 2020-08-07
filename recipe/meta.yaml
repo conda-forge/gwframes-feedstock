@@ -10,11 +10,11 @@ source:
   # build; see <https://github.com/conda-forge/xgboost-feedstock/issues/22>
   git_url: https://github.com/moble/{{ name }}.git
   git_rev: {{ version }}
-  # Mitigate the above by just cloning the minimum depth
-  git_depth: 1
+  # Mitigate the above by just shallow cloning, while still capturing the tag
+  git_depth: 10
 
 build:
-  number: 1
+  number: 2
   script: "cd Code && {{ PYTHON }} setup.py install"
   skip: True  # [win]
 
@@ -43,7 +43,7 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - h5py
     - scipy
-    - matplotlib
+    - matplotlib-base
 
 test:
   imports:
